@@ -1,7 +1,7 @@
 Garrycoin Core integration/staging tree
 =====================================
 
-![GarryCoin](draft-logo)
+![GarryCoin](draft_logo.png)
 
 https://garrycoin.org (coming soon)
 
