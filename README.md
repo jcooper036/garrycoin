@@ -1,18 +1,15 @@
 Garrycoin Core integration/staging tree
 =====================================
 
-[![Build Status](https://travis-ci.org/garrycoin-project/garrycoin.svg?branch=master)](https://travis-ci.org/garrycoin-project/garrycoin)
+![GarryCoin](draft-logo)
 
-https://garrycoin.org
+https://garrycoin.org (coming soon)
 
 What is Garrycoin?
 ----------------
 
 Garrycoin is an experimental digital currency that enables instant payments to
-anyone, anywhere in the world. Garrycoin uses peer-to-peer technology to operate
-with no central authority: managing transactions and issuing money are carried
-out collectively by the network. Garrycoin Core is the name of open source
-software which enables the use of this currency.
+anyone, anywhere in the world. Garrycoin is the first cryptocurrency made for people named Garrett. It is a fork of Litecoin.
 
 For more information, as well as an immediately useable, binary version of
 the Garrycoin Core software, see [https://garrycoin.org](https://garrycoin.org).
@@ -26,7 +23,7 @@ information or see https://opensource.org/licenses/MIT.
 Development Process
 -------------------
 
-The `master` branch is regularly built and tested, but is not guaranteed to be
+The `main` branch is regularly built and tested, but is not guaranteed to be
 completely stable. [Tags](https://github.com/garrycoin-project/garrycoin/tags) are created
 regularly to indicate new official, stable release versions of Garrycoin Core.
 
