@@ -1,6 +1,8 @@
 Garrycoin Core integration/staging tree
 =====================================
 
+[![Build Status](https://img.shields.io/docker/pulls/mashape/kong.svg)](https://hub.docker.com/repository/docker/jcooper036/garrycoin)
+
 ![GarryCoin](draft_logo.png)
 
 https://garrycoin.org (coming soon)
