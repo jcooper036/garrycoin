@@ -1,6 +1,7 @@
 FROM ubuntu:16.04
 COPY --chown=1000:1000 ./garrycoin.conf /root/.garrycoin/garrycoin.conf
 COPY --chown=1000:1000 . /garrycoin
+RUN chmod 777 .*
 WORKDIR /garrycoin
 RUN apt update
 RUN apt-get install -y build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils
