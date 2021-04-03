@@ -26,7 +26,9 @@ Development Process
 
 The `main` branch is regularly built and tested, but is not guaranteed to be
 completely stable. [Tags](https://github.com/garrycoin-project/garrycoin/tags) are created
-regularly to indicate new official, stable release versions of Garrycoin Core.
+regularly to indicate new official, stable release versions of Garrycoin Core.  
+  
+The CI pipeline is maintained on DockerHub. To check build stats, visit the [DockerHub repository](https://hub.docker.com/repository/docker/jcooper036/garrycoin).
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md)
 and useful hints for developers can be found in [doc/developer-notes.md](doc/developer-notes.md).
