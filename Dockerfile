@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-COPY garrycoin.conf /root/.garrycoin/garrycoin.conf
+COPY ./garrycoin.conf /root/.garrycoin/garrycoin.conf
 COPY . /garrycoin
 WORKDIR /garrycoin
 
