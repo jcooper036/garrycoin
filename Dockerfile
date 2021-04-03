@@ -21,6 +21,7 @@ RUN apt-get install -y libminiupnpc-dev
 RUN apt-get install -y libzmq3-dev
 
 #build garrycoin source
+RUN ["chmod", "+x", "./autogen.sh"]
 RUN ./autogen.sh
 RUN ./configure
 RUN make
