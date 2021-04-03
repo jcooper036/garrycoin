@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
-COPY ./garrycoin.conf /root/.garrycoin/garrycoin.conf
-COPY . /garrycoin
+COPY --chown=1000:1000 ./garrycoin.conf /root/.garrycoin/garrycoin.conf
+COPY --chown=1000:1000 . /garrycoin
 WORKDIR /garrycoin
 
 #shared libraries and dependencies
@@ -21,7 +21,7 @@ RUN apt-get install -y libminiupnpc-dev
 RUN apt-get install -y libzmq3-dev
 
 #build garrycoin source
-RUN ["chmod", "+x", "./autogen.sh"]
+# RUN ["chmod", "+x", "./autogen.sh"]
 RUN ./autogen.sh
 RUN ./configure
 RUN make
