@@ -21,5 +21,5 @@ RUN ./configure
 RUN make
 RUN make install
 #open service port
-EXPOSE 9666 19666
-CMD ["garrycoind", "--printtoconsole"]
+# EXPOSE 9666 19666
+# CMD ["garrycoind", "--printtoconsole"]
