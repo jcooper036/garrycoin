@@ -1,7 +1,7 @@
-Contributing to Garrycoin Core
+Contributing to garrycoin Core
 ============================
 
-The Garrycoin Core project operates an open contributor model where anyone is
+The garrycoin Core project operates an open contributor model where anyone is
 welcome to contribute towards development in the form of peer review, testing
 and patches. This document explains the practical process and guidelines for
 contributing.
@@ -14,21 +14,6 @@ purposes. As such there are repository "maintainers" who are responsible for
 merging pull requests as well as a "lead maintainer" who is responsible for the
 release cycle, overall merging, moderation and appointment of maintainers.
 
-Communication Channels
-----------------------
-
-Most communication about Garrycoin Core development happens on IRC, in the
-#garrycoin-dev channel on Freenode. The easiest way to participate on IRC is
-with the web client, [webchat.freenode.net](https://webchat.freenode.net/).
-
-Discussion about code base improvements happens in GitHub issues and on pull
-requests.
-
-The developer
-[mailing list](https://groups.google.com/forum/#!forum/garrycoin-dev)
-should be used to discuss complicated or controversial changes before working on
-a patch set.
-
 
 Contributor Workflow
 --------------------
@@ -39,9 +24,9 @@ facilitates social contribution, easy testing and peer review.
 
 To contribute a patch, the workflow is as follows:
 
-  1. Fork repository
-  1. Create topic branch
-  1. Commit patches
+  - Fork repository
+  - Create topic branch
+  - Commit patches
 
 The project coding conventions in the [developer notes](doc/developer-notes.md)
 must be adhered to.
@@ -57,11 +42,9 @@ in init.cpp") in which case a single title line is sufficient. Commit messages s
 helpful to people reading your code in the future, so explain the reasoning for
 your decisions. Further explanation [here](http://chris.beams.io/posts/git-commit/).
 
-If a particular commit references another issue, please add the reference. For
-example: `refs #1234` or `fixes #4321`. Using the `fixes` or `closes` keywords
+If a particular commit references another issue, please add the reference, for
+example `refs #1234`, or `fixes #4321`. Using the `fixes` or `closes` keywords
 will cause the corresponding issue to be closed when the pull request is merged.
-
-Commit messages should never contain any `@` mentions.
 
 Please refer to the [Git manual](https://git-scm.com/doc) for more information
 about Git.
@@ -74,12 +57,12 @@ the pull request affects. Valid areas as:
 
   - *Consensus* for changes to consensus critical code
   - *Docs* for changes to the documentation
-  - *Qt* for changes to garrycoin-qt
+  - *Qt* for changes to bitcoin-qt
   - *Mining* for changes to the mining code
   - *Net* or *P2P* for changes to the peer-to-peer network code
   - *RPC/REST/ZMQ* for changes to the RPC, REST or ZMQ APIs
   - *Scripts and tools* for changes to the scripts and tools
-  - *Tests* for changes to the garrycoin unit tests or QA tests
+  - *Tests* for changes to the bitcoin unit tests or QA tests
   - *Trivial* should **only** be used for PRs that do not change generated
     executable code. Notably, refactors (change of function arguments and code
     reorganization) and changes in behavior should **not** be marked as trivial.
@@ -98,11 +81,7 @@ Examples:
     Qt: Add feed bump button
     Trivial: Fix typo in init.cpp
 
-Note that translations should not be submitted as pull requests, please see
-[Translation Process](https://github.com/bitcoin/bitcoin/blob/master/doc/translation_process.md) 
-for more information on helping with translations.
-
-If a pull request is not to be considered for merging (yet), please
+If a pull request is specifically not to be considered for merging (yet) please
 prefix the title with [WIP] or use [Tasks Lists](https://help.github.com/articles/basic-writing-and-formatting-syntax/#task-lists)
 in the body of the pull request to indicate tasks are pending.
 
@@ -115,8 +94,6 @@ At this stage one should expect comments and review from other contributors. You
 can add more commits to your pull request by committing them locally and pushing
 to your fork until you have satisfied all feedback.
 
-Note: Code review is a burdensome but important part of the development process, and as such, certain types of pull requests are rejected. In general, if the **improvements** do not warrant the **review effort** required, the PR has a high chance of being rejected. It is up to the PR author to convince the reviewers that the changes warrant the review effort, and if reviewers are "Concept NAK'ing" the PR, the author may need to present arguments and/or do research backing their suggested changes.
-
 Squashing Commits
 ---------------------------
 If your pull request is accepted for merging, you may be asked by a maintainer
@@ -125,15 +102,11 @@ before it will be merged. The basic squashing workflow is shown below.
 
     git checkout your_branch_name
     git rebase -i HEAD~n
-    # n is normally the number of commits in the pull request.
-    # Set commits (except the one in the first line) from 'pick' to 'squash', save and quit.
-    # On the next screen, edit/refine commit messages.
-    # Save and quit.
+    # n is normally the number of commits in the pull
+    # set commits from 'pick' to 'squash', save and quit
+    # on the next screen, edit/refine commit messages
+    # save and quit
     git push -f # (force push to GitHub)
-
-Please update the resulting commit message if needed, it should read as a
-coherent message. In most cases this means that you should not just list the
-interim commits.
 
 If you have problems with squashing (or other workflows with `git`), you can
 alternatively enable "Allow edits from maintainers" in the right GitHub
@@ -180,23 +153,14 @@ behaviour of code within the pull request (bugs must be preserved as is).
 Project maintainers aim for a quick turnaround on refactoring pull requests, so
 where possible keep them short, uncomplex and easy to verify.
 
-Pull requests that refactor the code should not be made by new contributors. It
-requires a certain level of experience to know where the code belongs to and to
-understand the full ramification (including rebase effort of open pull requests).
-
-Trivial pull requests or pull requests that refactor the code with no clear
-benefits may be immediately closed by the maintainers to reduce unnecessary
-workload on reviewing.
-
 
 "Decision Making" Process
 -------------------------
 
-The following applies to code changes to the Garrycoin Core project (and related
-projects such as libsecp256k1), and is not to be confused with overall Garrycoin
+The following applies to code changes to the garrycoin Core project, and is not to be confused with overall garrycoin
 Network Protocol consensus changes.
 
-Whether a pull request is merged into Garrycoin Core rests with the project merge
+Whether a pull request is merged into garrycoin Core rests with the project merge
 maintainers and ultimately the project lead.
 
 Maintainers will take into consideration if a patch is in line with the general
@@ -209,12 +173,12 @@ In general, all pull requests must:
     the project (for example refactoring for modularisation);
   - Be well peer reviewed;
   - Have unit tests and functional tests where appropriate;
-  - Follow code style guidelines ([C++](doc/developer-notes.md), [functional tests](test/functional/README.md));
+  - Follow code style guidelines;
   - Not break the existing test suite;
   - Where bugs are fixed, where possible, there should be unit tests
     demonstrating the bug and also proving the fix. This helps prevent regression.
 
-Patches that change Garrycoin consensus rules are considerably more involved than
+Patches that change garrycoin consensus rules are considerably more involved than
 normal because they affect the entire ecosystem and so must be preceded by
 extensive mailing list discussions and have a numbered BIP. While each case will
 be different, one should be prepared to expend more time and effort than for
@@ -255,7 +219,7 @@ higher in terms of discussion and peer review requirements, keeping in mind that
 mistakes could be very costly to the wider community. This includes refactoring
 of consensus critical code.
 
-Where a patch set proposes to change the Garrycoin consensus, it must have been
+Where a patch set proposes to change the garrycoin consensus, it must have been
 discussed extensively on the mailing list and IRC, be accompanied by a widely
 discussed BIP and have a generally widely perceived technical consensus of being
 a worthwhile change based on the judgement of the maintainers.
@@ -295,10 +259,13 @@ about:
 Release Policy
 --------------
 
-The project leader is the release manager for each Garrycoin Core release.
+The project leader is the release manager for each garrycoin Core release.
 
 Copyright
 ---------
+Copyright 2017 The garrycoin Core Developers
+
+- bitcoin: Copyright (c) 2009-2017 Bitcoin Core Developers (MIT License)
 
 By contributing to this repository, you agree to license your work under the 
 MIT license unless specified otherwise in `contrib/debian/copyright` or at 

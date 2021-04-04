@@ -1,15 +1,15 @@
-// Copyright (c) 2013-2018 The Bitcoin Core developers
+// Copyright (c) 2013-2015 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <boost/test/unit_test.hpp>
 
-#include <key.h>
-#include <key_io.h>
-#include <uint256.h>
-#include <util/system.h>
-#include <util/strencodings.h>
-#include <test/test_bitcoin.h>
+#include "base58.h"
+#include "key.h"
+#include "uint256.h"
+#include "util.h"
+#include "utilstrencodings.h"
+#include "test/test_bitcoin.h"
 
 #include <string>
 #include <vector>
@@ -24,7 +24,7 @@ struct TestVector {
     std::string strHexMaster;
     std::vector<TestDerivation> vDerive;
 
-    explicit TestVector(std::string strHexMasterIn) : strHexMaster(strHexMasterIn) {}
+    TestVector(std::string strHexMasterIn) : strHexMaster(strHexMasterIn) {}
 
     TestVector& operator()(std::string pub, std::string prv, unsigned int nChild) {
         vDerive.push_back(TestDerivation());
@@ -58,7 +58,7 @@ TestVector test1 =
      0);
 
 TestVector test2 =
-  TestVector("fffcf9f6f3f0edeae7e4e1dedbd8d5d2cfccc9c6c3c0bdbab7b4b1aeaba8a5a29f9c999693908d8a8784817e7b7875726f6c696663605d5a5754514e4b484542")
+  TestVector("fffcf9f6f3f0edeae7e4e1dedbd8d5d2cfccc9c6c3c0bdbab7b4b1aeaba8a5a29f9c999693908d8a8784817e7b7875726f6c693633605d5a5754514e4b484542")
     ("xpub661MyMwAqRbcFW31YEwpkMuc5THy2PSt5bDMsktWQcFF8syAmRUapSCGu8ED9W6oDMSgv6Zz8idoc4a6mr8BDzTJY47LJhkJ8UB7WEGuduB",
      "xprv9s21ZrQH143K31xYSDQpPDxsXRTUcvj2iNHm5NUtrGiGG5e2DtALGdso3pGz6ssrdK4PFmM8NSpSBHNqPqm55Qn3LqFtT2emdEXVYsCzC2U",
      0)
@@ -87,11 +87,11 @@ TestVector test3 =
      "xprv9uPDJpEQgRQfDcW7BkF7eTya6RPxXeJCqCJGHuCJ4GiRVLzkTXBAJMu2qaMWPrS7AANYqdq6vcBcBUdJCVVFceUvJFjaPdGZ2y9WACViL4L",
       0);
 
-static void RunTest(const TestVector &test) {
+void RunTest(const TestVector &test) {
     std::vector<unsigned char> seed = ParseHex(test.strHexMaster);
     CExtKey key;
     CExtPubKey pubkey;
-    key.SetSeed(seed.data(), seed.size());
+    key.SetMaster(&seed[0], seed.size());
     pubkey = key.Neuter();
     for (const TestDerivation &derive : test.vDerive) {
         unsigned char data[74];
@@ -99,12 +99,20 @@ static void RunTest(const TestVector &test) {
         pubkey.Encode(data);
 
         // Test private key
-        BOOST_CHECK(EncodeExtKey(key) == derive.prv);
-        BOOST_CHECK(DecodeExtKey(derive.prv) == key); //ensure a base58 decoded key also matches
+        CBitcoinExtKey b58key; b58key.SetKey(key);
+        BOOST_CHECK(b58key.ToString() == derive.prv);
+
+        CBitcoinExtKey b58keyDecodeCheck(derive.prv);
+        CExtKey checkKey = b58keyDecodeCheck.GetKey();
+        assert(checkKey == key); //ensure a base58 decoded key also matches
 
         // Test public key
-        BOOST_CHECK(EncodeExtPubKey(pubkey) == derive.pub);
-        BOOST_CHECK(DecodeExtPubKey(derive.pub) == pubkey); //ensure a base58 decoded pubkey also matches
+        CBitcoinExtPubKey b58pubkey; b58pubkey.SetKey(pubkey);
+        BOOST_CHECK(b58pubkey.ToString() == derive.pub);
+
+        CBitcoinExtPubKey b58PubkeyDecodeCheck(derive.pub);
+        CExtPubKey checkPubKey = b58PubkeyDecodeCheck.GetKey();
+        assert(checkPubKey == pubkey); //ensure a base58 decoded pubkey also matches
 
         // Derive new keys
         CExtKey keyNew;

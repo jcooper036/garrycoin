@@ -1,18 +1,17 @@
-// Copyright (c) 2016-2018 The Bitcoin Core developers
+// Copyright (c) 2016 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include <blockencodings.h>
-#include <consensus/consensus.h>
-#include <consensus/validation.h>
-#include <chainparams.h>
-#include <crypto/sha256.h>
-#include <crypto/siphash.h>
-#include <random.h>
-#include <streams.h>
-#include <txmempool.h>
-#include <validation.h>
-#include <util/system.h>
+#include "blockencodings.h"
+#include "consensus/consensus.h"
+#include "consensus/validation.h"
+#include "chainparams.h"
+#include "hash.h"
+#include "random.h"
+#include "streams.h"
+#include "txmempool.h"
+#include "validation.h"
+#include "util.h"
 
 #include <unordered_map>
 
@@ -163,7 +162,7 @@ ReadStatus PartiallyDownloadedBlock::InitData(const CBlockHeaderAndShortTxIDs& c
             break;
     }
 
-    LogPrint(BCLog::CMPCTBLOCK, "Initialized PartiallyDownloadedBlock for block %s using a cmpctblock of size %lu\n", cmpctblock.header.GetHash().ToString(), GetSerializeSize(cmpctblock, PROTOCOL_VERSION));
+    LogPrint(BCLog::CMPCTBLOCK, "Initialized PartiallyDownloadedBlock for block %s using a cmpctblock of size %lu\n", cmpctblock.header.GetHash().ToString(), GetSerializeSize(cmpctblock, SER_NETWORK, PROTOCOL_VERSION));
 
     return READ_STATUS_OK;
 }

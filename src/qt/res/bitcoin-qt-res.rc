@@ -19,8 +19,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Garrycoin"
-            VALUE "FileDescription",    PACKAGE_NAME " (GUI node for Garrycoin)"
+            VALUE "CompanyName",        "garrycoin"
+            VALUE "FileDescription",    PACKAGE_NAME " (GUI node for garrycoin)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "garrycoin-qt"
             VALUE "LegalCopyright",     COPYRIGHT_STR
