@@ -32,4 +32,4 @@ RUN make install
 #open service port
 EXPOSE 9363 19363
 
-CMD ["garrycoind", "--printtoconsole"]
+# CMD ["garrycoind", "--printtoconsole"]
