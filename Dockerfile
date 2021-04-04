@@ -3,6 +3,7 @@ FROM ubuntu:16.04
 COPY ./garrycoin.conf /root/.garrycoin/garrycoin.conf
 
 COPY . /garrycoin
+RUN /bin/bash -c 'chmod -R +x /garrycoin'
 WORKDIR /garrycoin
 
 #shared libraries and dependencies
