@@ -26,10 +26,6 @@
         <translation>Izdzēst iezīmētās adreses no saraksta</translation>
     </message>
     <message>
-        <source>Enter address or label to search</source>
-        <translation>Ierakstiet meklējamo nosaukumu vai adresi</translation>
-    </message>
-    <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Datus no tekošā ieliktņa eksportēt uz failu</translation>
     </message>
@@ -52,10 +48,6 @@
     <message>
         <source>&amp;Copy Address</source>
         <translation>&amp;Kopēt adresi</translation>
-    </message>
-    <message>
-        <source>Copy &amp;Label</source>
-        <translation>Kopēt &amp;Marķējumu</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
@@ -104,10 +96,6 @@
         <translation>Jaunā parole vēlreiz</translation>
     </message>
     <message>
-        <source>Show password</source>
-        <translation>Rādīt paroli</translation>
-    </message>
-    <message>
         <source>Encrypt wallet</source>
         <translation>Šifrēt maciņu</translation>
     </message>
@@ -148,6 +136,10 @@
     <message>
         <source>&amp;Overview</source>
         <translation>&amp;Pārskats</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>Node</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
@@ -194,6 +186,14 @@
         <translation>Mainīt &amp;Paroli...</translation>
     </message>
     <message>
+        <source>&amp;Sending addresses...</source>
+        <translation>&amp;Sūtīšanas adreses...</translation>
+    </message>
+    <message>
+        <source>&amp;Receiving addresses...</source>
+        <translation>Saņemšanas &amp;adreses...</translation>
+    </message>
+    <message>
         <source>Open &amp;URI...</source>
         <translation>Atvērt &amp;URI...</translation>
     </message>
@@ -202,8 +202,8 @@
         <translation>Bloku reindeksēšana no diska...</translation>
     </message>
     <message>
-        <source>Send coins to a Garrycoin address</source>
-        <translation>Nosūtīt bitkoinus uz Garrycoin adresi</translation>
+        <source>Send coins to a garrycoin address</source>
+        <translation>Nosūtīt bitkoinus uz garrycoin adresi</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -226,8 +226,12 @@
         <translation>&amp;Pārbaudīt ziņojumu...</translation>
     </message>
     <message>
-        <source>Garrycoin</source>
-        <translation>Garrycoin</translation>
+        <source>garrycoin</source>
+        <translation>garrycoin</translation>
+    </message>
+    <message>
+        <source>Wallet</source>
+        <translation>Maciņš</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -250,12 +254,12 @@
         <translation>Šifrēt privātās atslēgas kuras pieder tavam maciņam</translation>
     </message>
     <message>
-        <source>Sign messages with your Garrycoin addresses to prove you own them</source>
-        <translation>Parakstīt ziņojumus ar savām Garrycoin adresēm lai pierādītu ka tās pieder tev</translation>
+        <source>Sign messages with your garrycoin addresses to prove you own them</source>
+        <translation>Parakstīt ziņojumus ar savām garrycoin adresēm lai pierādītu ka tās pieder tev</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Garrycoin addresses</source>
-        <translation>Pārbaudīt ziņojumus lai pārliecinātos, ka tie tika parakstīti ar norādītajām Garrycoin adresēm</translation>
+        <source>Verify messages to ensure they were signed with specified garrycoin addresses</source>
+        <translation>Pārbaudīt ziņojumus lai pārliecinātos, ka tie tika parakstīti ar norādītajām garrycoin adresēm</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -308,10 +312,6 @@
     <message>
         <source>Up to date</source>
         <translation>Sinhronizēts</translation>
-    </message>
-    <message>
-        <source>&amp;Window</source>
-        <translation>&amp;Logs</translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -441,7 +441,15 @@
         <source>Command-line options</source>
         <translation>Komandrindas iespējas</translation>
     </message>
-</context>
+    <message>
+        <source>Usage:</source>
+        <translation>Lietojums:</translation>
+    </message>
+    <message>
+        <source>command-line options</source>
+        <translation>komandrindas izvēles</translation>
+    </message>
+    </context>
 <context>
     <name>Intro</name>
     <message>
@@ -455,10 +463,6 @@
     <message>
         <source>Use a custom data directory:</source>
         <translation>Izmantot pielāgotu datu mapi:</translation>
-    </message>
-    <message>
-        <source>Garrycoin</source>
-        <translation>Garrycoin</translation>
     </message>
     <message>
         <source>Error</source>
@@ -510,8 +514,16 @@
         <translation>&amp;Datubāzes kešatmiņas izmērs</translation>
     </message>
     <message>
+        <source>MB</source>
+        <translation>MB</translation>
+    </message>
+    <message>
         <source>Number of script &amp;verification threads</source>
         <translation>Skriptu &amp;pārbaudes pavedienu skaits</translation>
+    </message>
+    <message>
+        <source>Allow incoming connections</source>
+        <translation>Atļaut ienākošos savienojumus</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
@@ -520,6 +532,14 @@
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Exit in the menu.</source>
         <translation>Minimizēt nevis aizvērt aplikāciju, kad logs tiek aizvērts. Kad šī iespēja ir ieslēgta, aplikācija tiks aizvērta, izvēloties Aizvērt izvēlnē.</translation>
+    </message>
+    <message>
+        <source>Third party transaction URLs</source>
+        <translation>Trešo personu transakciju URLs</translation>
+    </message>
+    <message>
+        <source>Active command-line options that override above options:</source>
+        <translation>Aktīvās komandrindas opcijas, kuras pārspēko šos iestatījumus:</translation>
     </message>
     <message>
         <source>Reset all client options to default.</source>
@@ -550,8 +570,8 @@
         <translation>&amp;Tērēt neapstiprinātu atlikumu</translation>
     </message>
     <message>
-        <source>Automatically open the Garrycoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Uz rūtera automātiski atvērt Garrycoin klienta portu. Tas strādā tikai tad, ja rūteris atbalsta UPnP un tas ir ieslēgts.</translation>
+        <source>Automatically open the garrycoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Uz rūtera automātiski atvērt garrycoin klienta portu. Tas strādā tikai tad, ja rūteris atbalsta UPnP un tas ir ieslēgts.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -603,7 +623,7 @@
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
-        <translation>Vai rādīt Garrycoin kontroles funkcijas vai nē.</translation>
+        <translation>Vai rādīt garrycoin kontroles funkcijas vai nē.</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -626,10 +646,6 @@
         <translation>Apstiprināt iestatījumu atiestatīšanu</translation>
     </message>
     <message>
-        <source>Error</source>
-        <translation>Kļūda</translation>
-    </message>
-    <message>
         <source>The supplied proxy address is invalid.</source>
         <translation>Norādītā starpniekservera adrese nav derīga.</translation>
     </message>
@@ -641,8 +657,8 @@
         <translation>Forma</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Garrycoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Attēlotā informācija var būt novecojusi. Jūsu maciņš pēc savienojuma izveides automātiski sinhronizējas ar Garrycoin tīklu, taču šis process vēl nav beidzies.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the garrycoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Attēlotā informācija var būt novecojusi. Jūsu maciņš pēc savienojuma izveides automātiski sinhronizējas ar garrycoin tīklu, taču šis process vēl nav beidzies.</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -701,27 +717,7 @@
         <source>%1 and %2</source>
         <translation>%1 un %2</translation>
     </message>
-    <message>
-        <source>%1 B</source>
-        <translation>%1 B</translation>
-    </message>
-    <message>
-        <source>%1 KB</source>
-        <translation>%1 KB</translation>
-    </message>
-    <message>
-        <source>%1 MB</source>
-        <translation>%1 MB</translation>
-    </message>
-    <message>
-        <source>%1 GB</source>
-        <translation>%1 GB</translation>
-    </message>
-    <message>
-        <source>unknown</source>
-        <translation>nav zināms</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>QObject::QObject</name>
     </context>
@@ -791,6 +787,10 @@
         <translation>&amp;Tīkla Satiksme</translation>
     </message>
     <message>
+        <source>&amp;Clear</source>
+        <translation>&amp;Notīrīt</translation>
+    </message>
+    <message>
         <source>Totals</source>
         <translation>Kopsummas</translation>
     </message>
@@ -810,6 +810,30 @@
         <source>Clear console</source>
         <translation>Notīrīt konsoli</translation>
     </message>
+    <message>
+        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
+        <translation>Izmantojiet bultiņas uz augšu un leju, lai pārvietotos pa vēsturi, un &lt;b&gt;Ctrl-L&lt;/b&gt; ekrāna notīrīšanai.</translation>
+    </message>
+    <message>
+        <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
+        <translation>Ierakstiet &lt;b&gt;help&lt;/b&gt; lai iegūtu pieejamo komandu sarakstu.</translation>
+    </message>
+    <message>
+        <source>%1 B</source>
+        <translation>%1 B</translation>
+    </message>
+    <message>
+        <source>%1 KB</source>
+        <translation>%1 KB</translation>
+    </message>
+    <message>
+        <source>%1 MB</source>
+        <translation>%1 MB</translation>
+    </message>
+    <message>
+        <source>%1 GB</source>
+        <translation>%1 GB</translation>
+    </message>
     </context>
 <context>
     <name>ReceiveCoinsDialog</name>
@@ -824,6 +848,10 @@
     <message>
         <source>&amp;Message:</source>
         <translation>&amp;Ziņojums:</translation>
+    </message>
+    <message>
+        <source>R&amp;euse an existing receiving address (not recommended)</source>
+        <translation>&amp;Atkārtoti izmantot esošo saņemšanas adresi (nav ieteicams)</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
@@ -884,10 +912,6 @@
         <source>Label</source>
         <translation>Nosaukums</translation>
     </message>
-    <message>
-        <source>Wallet</source>
-        <translation>Maciņš</translation>
-    </message>
     </context>
 <context>
     <name>RecentRequestsTableModel</name>
@@ -908,7 +932,7 @@
     </message>
     <message>
         <source>Coin Control Features</source>
-        <translation>Garrycoin Kontroles Funkcijas</translation>
+        <translation>garrycoin Kontroles Funkcijas</translation>
     </message>
     <message>
         <source>Inputs...</source>
@@ -981,10 +1005,6 @@
     <message>
         <source>S&amp;end</source>
         <translation>&amp;Sūtīt</translation>
-    </message>
-    <message>
-        <source>Transaction fee</source>
-        <translation>Transakcijas maksa</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1091,8 +1111,8 @@
         <translation>Kopēt parakstu uz sistēmas starpliktuvi</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Garrycoin address</source>
-        <translation>Parakstīt ziņojumu lai pierādītu, ka esi šīs Garrycoin adreses īpašnieks.</translation>
+        <source>Sign the message to prove you own this garrycoin address</source>
+        <translation>Parakstīt ziņojumu lai pierādītu, ka esi šīs garrycoin adreses īpašnieks.</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1173,9 +1193,6 @@
     <name>UnitDisplayStatusBarControl</name>
     </context>
 <context>
-    <name>WalletController</name>
-    </context>
-<context>
     <name>WalletFrame</name>
     </context>
 <context>
@@ -1187,8 +1204,48 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Garrycoin Core</source>
-        <translation>Garrycoin Core</translation>
+        <source>Options:</source>
+        <translation>Iespējas:</translation>
+    </message>
+    <message>
+        <source>Specify data directory</source>
+        <translation>Norādiet datu direktoriju</translation>
+    </message>
+    <message>
+        <source>Connect to a node to retrieve peer addresses, and disconnect</source>
+        <translation>Pievienoties mezglam, lai iegūtu citu mezglu adreses, un atvienoties</translation>
+    </message>
+    <message>
+        <source>Specify your own public address</source>
+        <translation>Norādiet savu publisko adresi</translation>
+    </message>
+    <message>
+        <source>Accept command line and JSON-RPC commands</source>
+        <translation>Pieņemt komandrindas un JSON-RPC komandas</translation>
+    </message>
+    <message>
+        <source>Run in the background as a daemon and accept commands</source>
+        <translation>Darbināt fonā kā servisu un pieņemt komandas</translation>
+    </message>
+    <message>
+        <source>garrycoin Core</source>
+        <translation>garrycoin Core</translation>
+    </message>
+    <message>
+        <source>&lt;category&gt; can be:</source>
+        <translation>&lt;category&gt; var būt:</translation>
+    </message>
+    <message>
+        <source>Block creation options:</source>
+        <translation>Bloka izveidošanas iestatījumi:</translation>
+    </message>
+    <message>
+        <source>Connection options:</source>
+        <translation>Savienojuma iestatījumi:</translation>
+    </message>
+    <message>
+        <source>Debugging/Testing options:</source>
+        <translation>Atkļūdošanas/Testēšanas iestatījumi:</translation>
     </message>
     <message>
         <source>Error loading block database</source>
@@ -1207,8 +1264,24 @@
         <translation>Pārbauda blokus...</translation>
     </message>
     <message>
+        <source>Verifying wallet...</source>
+        <translation>Pārbauda maciņu...</translation>
+    </message>
+    <message>
+        <source>Wallet options:</source>
+        <translation>Maciņa iespējas:</translation>
+    </message>
+    <message>
         <source>Information</source>
         <translation>Informācija</translation>
+    </message>
+    <message>
+        <source>RPC server options:</source>
+        <translation>RPC servera iestatījumi:</translation>
+    </message>
+    <message>
+        <source>Send trace/debug info to console instead of debug.log file</source>
+        <translation>Debug/trace informāciju izvadīt konsolē, nevis debug.log failā</translation>
     </message>
     <message>
         <source>Signing transaction failed</source>
@@ -1223,8 +1296,32 @@
         <translation>Transakcija ir pārāk liela</translation>
     </message>
     <message>
+        <source>Username for JSON-RPC connections</source>
+        <translation>JSON-RPC savienojumu lietotājvārds</translation>
+    </message>
+    <message>
         <source>Warning</source>
         <translation>Brīdinājums</translation>
+    </message>
+    <message>
+        <source>Password for JSON-RPC connections</source>
+        <translation>JSON-RPC savienojumu parole</translation>
+    </message>
+    <message>
+        <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
+        <translation>Izpildīt komandu, kad labāk atbilstošais bloks izmainās (%s cmd aizvieto ar bloka hešu)</translation>
+    </message>
+    <message>
+        <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
+        <translation>Atļaut DNS uzmeklēšanu priekš -addnode, -seednode un -connect</translation>
+    </message>
+    <message>
+        <source>Loading addresses...</source>
+        <translation>Ielādē adreses...</translation>
+    </message>
+    <message>
+        <source>Invalid -proxy address: '%s'</source>
+        <translation>Nederīga -proxy adrese: '%s'</translation>
     </message>
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
@@ -1239,12 +1336,20 @@
         <translation>Ielādē bloku indeksu...</translation>
     </message>
     <message>
+        <source>Add a node to connect to and attempt to keep the connection open</source>
+        <translation>Pievienot mezglu, kam pievienoties un turēt savienojumu atvērtu</translation>
+    </message>
+    <message>
         <source>Loading wallet...</source>
         <translation>Ielādē maciņu...</translation>
     </message>
     <message>
         <source>Cannot downgrade wallet</source>
         <translation>Nevar maciņa formātu padarīt vecāku</translation>
+    </message>
+    <message>
+        <source>Cannot write default address</source>
+        <translation>Nevar ierakstīt adresi pēc noklusēšanas</translation>
     </message>
     <message>
         <source>Rescanning...</source>

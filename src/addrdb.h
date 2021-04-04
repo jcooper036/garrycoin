@@ -1,13 +1,13 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2009-2016 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_ADDRDB_H
 #define BITCOIN_ADDRDB_H
 
-#include <fs.h>
-#include <serialize.h>
+#include "fs.h"
+#include "serialize.h"
 
 #include <string>
 #include <map>
@@ -37,15 +37,10 @@ public:
         SetNull();
     }
 
-    explicit CBanEntry(int64_t nCreateTimeIn)
+    CBanEntry(int64_t nCreateTimeIn)
     {
         SetNull();
         nCreateTime = nCreateTimeIn;
-    }
-
-    explicit CBanEntry(int64_t n_create_time_in, BanReason ban_reason_in) : CBanEntry(n_create_time_in)
-    {
-        banReason = ban_reason_in;
     }
 
     ADD_SERIALIZE_METHODS;
@@ -66,7 +61,7 @@ public:
         banReason = BanReasonUnknown;
     }
 
-    std::string banReasonToString() const
+    std::string banReasonToString()
     {
         switch (banReason) {
         case BanReasonNodeMisbehaving:
@@ -97,9 +92,9 @@ public:
 class CBanDB
 {
 private:
-    const fs::path m_ban_list_path;
+    fs::path pathBanlist;
 public:
-    explicit CBanDB(fs::path ban_list_path);
+    CBanDB();
     bool Write(const banmap_t& banSet);
     bool Read(banmap_t& banSet);
 };

@@ -1,7 +1,7 @@
 Description
 ------------
 
-This directory contains data-driven tests for various aspects of Garrycoin.
+This directory contains data-driven tests for various aspects of Bitcoin.
 
 License
 --------
